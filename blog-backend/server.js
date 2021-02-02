@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5000;
 console.log('starting server');
 app.listen(PORT, () => console.log(`server started on port: ${PORT}`));
 
+app.use('/posts', require('./routes/postRoutes'));
+
 console.log('connecting to MongoDB');
 mongoose.connect(
   process.env.MONGODB_URI,
